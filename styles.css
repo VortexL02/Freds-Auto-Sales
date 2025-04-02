@@ -1,6 +1,8 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    background-image: url('background.jpg'); /* Correct file path */
+    background-size: cover;  /* This makes the image cover the entire screen */
+    background-position: scroll;  /* This centers the image */
     color: #333;
 }
 
