@@ -1,18 +1,67 @@
+/* Body styling */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('background.jpg'); /* Correct file path */
+    background-image: url('background.jpg'); /* Correct file path for your background image */
     background-size: cover;  /* This makes the image cover the entire screen */
-    background-position: scroll;  /* This centers the image */
+    background-position: center;  /* This centers the image */
+    background-attachment: scroll;  /* This makes the background scroll with the page */
     color: #333;
+    margin: 0;
+    padding: 0;
 }
 
+/* Navigation Bar Styling */
 header {
-    background-color: #4CAF50;
+    background-color: #333;
     color: white;
     padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
     text-align: center;
 }
 
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+}
+
+nav ul li a:hover {
+    background-color: #4CAF50;
+    border-radius: 5px;
+}
+
+/* Section Styling */
+section {
+    padding: 80px 20px 20px 20px; /* Give space to make room for the fixed nav */
+    margin-bottom: 40px;
+}
+
+section h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+section p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Footer Styling */
 footer {
     text-align: center;
     margin-top: 20px;
