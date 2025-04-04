@@ -1,164 +1,61 @@
-/* Reset Default Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showroom Vibes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#inventory">Inventory</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
+    <section id="home">
+        <div class="home-content">
+            <h1>Welcome to Our Showroom</h1>
+            <p>Find your dream car today</p>
+            <button>Browse Inventory</button>
+        </div>
+    </section>
 
-/* Navigation Bar */
-header {
-    background-color: #333;
-    color: white;
-    padding: 15px 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    text-align: center;
-}
+    <section id="inventory">
+        <h2>Featured Cars</h2>
+        <div class="car-cards">
+            <div class="car-card">
+                <img src="car1.jpg" alt="Car 1">
+                <h2>2022 Mustang GT</h2>
+                <p>$55,000</p>
+                <button>View Details</button>
+            </div>
+            <div class="car-card">
+                <img src="car2.jpg" alt="Car 2">
+                <h2>2023 Camaro SS</h2>
+                <p>$52,000</p>
+                <button>View Details</button>
+            </div>
+            <!-- Add more cars as needed -->
+        </div>
+    </section>
 
-nav ul {
-    list-style-type: none;
-}
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
 
-nav ul li {
-    display: inline-block;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    padding: 10px;
-}
-
-nav ul li a:hover {
-    background-color: #4CAF50;
-    border-radius: 5px;
-}
-
-/* Home Section with Background Image */
-#home {
-    height: 100vh;
-    background: url('./showroom.jpg') no-repeat center center/cover; /* Added ./ to path */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    position: relative;
-}
-
-}
-
-/* Home Content */
-.home-content {
-    background: rgba(0, 0, 0, 0.6); /* Adds a dark overlay for text readability */
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.home-content h1 {
-    font-size: 50px;
-    margin-bottom: 20px;
-}
-
-.home-content p {
-    font-size: 22px;
-    margin-bottom: 20px;
-}
-
-button {
-    padding: 12px 24px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-/* Sections Styling */
-section {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-/* Car Cards */
-.car-cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.car-card {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 250px;
-    text-align: center;
-}
-
-.car-card img {
-    width: 100%;
-    border-radius: 8px;
-}
-
-.car-card h2 {
-    font-size: 24px;
-    margin: 10px 0;
-}
-
-.car-card p {
-    font-size: 20px;
-    color: #4CAF50;
-}
-
-.car-card button {
-    margin-top: 10px;
-}
-
-/* Contact Form */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-form input, form textarea {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-form button {
-    background-color: #4CAF50;
-}
-
-form button:hover {
-    background-color: #45a049;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
-}
+    <footer>
+        <p>&copy; 2025 Showroom Vibes. All rights reserved.</p>
+    </footer>
+</body>
+</html>
