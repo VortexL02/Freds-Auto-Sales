@@ -1,61 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Showroom Vibes</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Freds Auto Sale</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#inventory">Inventory</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <div class="logo">
+      <a href="#home">
+        <img src="image/imagefreds-logo.png" alt="Freds Logo">
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#inventory">Inventory</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section id="home">
-        <div class="home-content">
-            <h1>Welcome to Our Showroom</h1>
-            <p>Find your dream car today</p>
-            <button>Browse Inventory</button>
-        </div>
-    </section>
+  <section id="home" class="scroll-fade">
+    <div class="home-content">
+      <h1>Welcome to Freds Auto Sale</h1>
+      <p>Find your dream car today</p>
+      <button>Browse Inventory</button>
+    </div>
+  </section>
 
-    <section id="inventory">
-        <h2>Featured Cars</h2>
-        <div class="car-cards">
-            <div class="car-card">
-                <img src="car1.jpg" alt="Car 1">
-                <h2>2022 Mustang GT</h2>
-                <p>$55,000</p>
-                <button>View Details</button>
-            </div>
-            <div class="car-card">
-                <img src="car2.jpg" alt="Car 2">
-                <h2>2023 Camaro SS</h2>
-                <p>$52,000</p>
-                <button>View Details</button>
-            </div>
-            <!-- Add more cars as needed -->
-        </div>
-    </section>
+  <section id="inventory" class="scroll-fade">
+    <h2>Featured Cars</h2>
+    <div class="car-cards">
+      <div class="car-card scroll-up">
+        <img src="image/car1.jpg" alt="Car 1">
+        <h2>2022 Mustang GT</h2>
+        <p>$55,000</p>
+        <button>View Details</button>
+      </div>
+      <div class="car-card scroll-up">
+        <img src="image/car2.jpg" alt="Car 2">
+        <h2>2023 Camaro SS</h2>
+        <p>$52,000</p>
+        <button>View Details</button>
+      </div>
+      <div class="car-card scroll-up">
+        <img src="image/car3.jpg" alt="Car 3">
+        <h2>2023 Dodge Charger</h2>
+        <p>$58,000</p>
+        <button>View Details</button>
+      </div>
+    </div>
+  </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
+  <section id="contact" class="scroll-fade">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 Showroom Vibes. All rights reserved.</p>
-    </footer>
+  <section id="dealer-info" class="scroll-fade">
+    <h2>Dealer Information</h2>
+    <p>509 E Washington St,<br>
+       Joliet, IL 60433</p>
+    <p><strong>SALES:</strong> (815) 630-2146</p>
+    <p><strong>HOURS:</strong><br>
+       Mon - Sat: 10:00 AM - 7:00 PM<br>
+       Sun: Closed</p>
+
+    <h3>Quick Links</h3>
+    <ul>
+      <li>Home</li>
+      <li>Inventory</li>
+      <li>Car Finder</li>
+      <li>Apply Online</li>
+      <li>About Us</li>
+      <li>Contact Us</li>
+      <li>Privacy Policy</li>
+    </ul>
+
+    <h3>About Us</h3>
+    <p>
+      Our Dealership is founded on trust, integrity, and respect. We are proud to offer these values in our sales and business practices, so our customers keep coming back. The vehicles on our lot have the best prices and quality in the area so come by and see us today!
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Freds Auto Sale. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Intersection Observer for scroll animations
+    const faders = document.querySelectorAll('.scroll-fade');
+    const sliders = document.querySelectorAll('.scroll-up');
+
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -100px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('appear');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+
+    sliders.forEach(slider => {
+      appearOnScroll.observe(slider);
+    });
+  </script>
 </body>
 </html>
