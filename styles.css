@@ -7,6 +7,7 @@
 
 body {
   font-family: Arial, sans-serif;
+  /* Fallback background in case video doesn't load */
   background-image: url('image/showroom.jpg');
   background-size: cover;
   background-position: center;
@@ -34,7 +35,7 @@ header .logo {
 }
 
 header .logo img {
-  width: 250px; /* Logo is now 5x bigger (from 50px to 250px) */
+  width: 250px; /* 5x bigger logo */
   height: auto;
 }
 
@@ -57,11 +58,31 @@ nav ul li a:hover {
   color: #fff;
 }
 
-/* Home Section */
+/* Home Section with Single Video Background */
 #home {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Single Video Background */
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the entire section */
+  z-index: -1; /* Keeps the video in the background */
+}
+
+/* Home Content */
+.home-content {
   text-align: center;
   padding: 100px 20px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text */
+  position: relative;
+  z-index: 1;
 }
 
 .home-content h1 {
@@ -107,6 +128,12 @@ nav ul li a:hover {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Interactive Hover Animation on Car Cards */
+.car-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
 
 .car-card img {
